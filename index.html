@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiDevis — Simplifiez vos chiffrages et propositions commerciales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        fond: '#e9eef5',
+                        carte: '#ffffff',
+                        header: '#0f172a',
+                        bleu: '#2563eb',
+                        hoverBleu: '#1d4ed8',
+                        bordure: '#d7e0ea',
+                        texteSec: '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-fond font-sans text-header antialiased min-h-screen flex flex-col">
+
+    <header class="bg-header text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-bleu w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl tracking-wider">OD</div>
+                <span class="text-xl font-bold tracking-tight">Opti<span class="text-bleu">Devis</span></span>
+            </div>
+            
+            <div>
+                <a href="https://script.google.com/macros/s/.../exec" target="_blank" class="bg-bleu hover:bg-hoverBleu transition-colors duration-200 text-white px-5 py-2.5 rounded-lg font-medium text-sm shadow-sm flex items-center space-x-2">
+                    <span>Accéder à mon espace</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col items-center justify-center text-center">
+        
+        <div class="inline-flex items-center space-x-2 bg-white border border-bordure px-3 py-1.5 rounded-full text-xs font-medium text-texteSec mb-6 shadow-sm">
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span>Solution sécurisée pour les professionnels</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-header max-w-3xl leading-tight">
+            Générez des devis professionnels en <span class="text-bleu">quelques clics</span>
+        </h1>
+        
+        <p class="mt-6 text-lg sm:text-xl text-texteSec max-w-2xl font-light leading-relaxed">
+            Une interface épurée et performante connectée directement à vos outils pour piloter votre activité commerciale en toute sérénité.
+        </p>
+
+        <div class="mt-10">
+            <a href="https://script.google.com/macros/s/.../exec" target="_blank" class="inline-block bg-bleu hover:bg-hoverBleu transition-all duration-200 text-white text-base font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Ouvrir l'application OptiDevis
+            </a>
+        </div>
+
+        <section class="mt-20 w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            
+            <div class="bg-carte border border-bordure p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="w-12 h-12 bg-fond text-bleu rounded-xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-header mb-2">Rapidité d'exécution</h3>
+                <p class="text-texteSec text-sm leading-relaxed">
+                    Saisissez vos données et laissez l'application calculer vos marges et générer vos documents instantanément.
+                </p>
+            </div>
+
+            <div class="bg-carte border border-bordure p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="w-12 h-12 bg-fond text-bleu rounded-xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-header mb-2">Espace Sécurisé</h3>
+                <p class="text-texteSec text-sm leading-relaxed">
+                    Vos données commerciales sont hébergées de manière confidentielle au sein de votre écosystème Google sécurisé.
+                </p>
+            </div>
+
+            <div class="bg-carte border border-bordure p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="w-12 h-12 bg-fond text-bleu rounded-xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-header mb-2">Suivi en Temps Réel</h3>
+                <p class="text-texteSec text-sm leading-relaxed">
+                    Visualisez l'état d'avancement de vos propositions et ne manquez plus aucune relance client.
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-bordure mt-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-xs text-texteSec">
+            <div>&copy; 2026 OptiDevis. Tous droits réservés.</div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-header transition-colors">Mentions légales</a>
+                <a href="#" class="hover:text-header transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
