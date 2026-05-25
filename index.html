@@ -24,6 +24,7 @@
                         hoverBleu: '#1d4ed8',
                         bordure: '#d7e0ea',
                         texteSec: '#64748b',
+                        rougeErreur: '#ef4444'
                     }
                 }
             }
@@ -38,14 +39,15 @@
                 <span class="text-xl font-bold tracking-tight">Opti<span class="text-bleu">Devis</span></span>
             </div>
             
-            <div>
-                <a href="https://script.google.com/macros/s/AKfycbyBQlPk16IuGobjRevbBddV4B4loHu9rnyZ9Jo-zaXL4PLLKyLRu1mLzB4awAzOrKsf/exec" target="_blank" class="bg-bleu hover:bg-hoverBleu transition-colors duration-200 text-white px-5 py-2.5 rounded-lg font-medium text-sm shadow-sm flex items-center space-x-2">
-                    <span>Accéder à mon espace</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </a>
+            <div class="flex items-center space-x-2 bg-slate-800 p-1.5 rounded-xl border border-slate-700">
+                <input type="text" id="headerCodeInput" placeholder="Code entreprise (ex: OD-4821)" class="bg-slate-900 text-white placeholder-slate-500 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-bleu w-44 uppercase">
+                <button onclick="redirigerArtisan('headerCodeInput', 'headerError')" class="bg-bleu hover:bg-hoverBleu transition-colors duration-200 text-white px-4 py-2 rounded-lg font-medium text-xs shadow-sm flex items-center space-x-1">
+                    <span>Accéder</span>
+                </button>
             </div>
+        </div>
+        <div id="headerError" class="hidden bg-red-600 text-white text-xs text-center py-1 transition-all">
+            Code entreprise incorrect. Veuillez réessayer.
         </div>
     </header>
 
@@ -67,10 +69,17 @@
             Une interface épurée et performante connectée directement à vos outils pour piloter votre activité commerciale en toute sérénité.
         </p>
 
-        <div class="mt-10">
-            <a href="https://script.google.com/macros/s/AKfycbyBQlPk16IuGobjRevbBddV4B4loHu9rnyZ9Jo-zaXL4PLLKyLRu1mLzB4awAzOrKsf/exec" target="_blank" class="inline-block bg-bleu hover:bg-hoverBleu transition-all duration-200 text-white text-base font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                Ouvrir l'application OptiDevis
-            </a>
+        <div class="mt-10 bg-carte border border-bordure p-6 rounded-2xl shadow-xl max-w-md w-full mx-auto">
+            <h2 class="text-base font-semibold text-header mb-3 text-left">Accéder à votre espace OptiDevis</h2>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <input type="text" id="mainCodeInput" placeholder="Entrez votre code OD-XXXX" class="flex-grow bg-fond border border-bordure text-header placeholder-texteSec text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-bleu uppercase font-mono tracking-wider">
+                <button onclick="redirigerArtisan('mainCodeInput', 'mainError')" class="bg-bleu hover:bg-hoverBleu transition-all duration-200 text-white text-sm font-semibold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg whitespace-nowrap">
+                    Ouvrir l'application
+                </button>
+            </div>
+            <p id="mainError" class="hidden text-rougeErreur text-xs mt-3 text-left font-medium">
+                ⚠️ Code entreprise introuvable. Vérifiez votre code ou contactez le support.
+            </p>
         </div>
 
         <section class="mt-20 w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -123,6 +132,46 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Base de données des applications clients
+        // Tu as juste à ajouter tes clients ici au fur et à mesure
+        const apps = {
+            "12": "https://script.google.com/macros/s/AKfycbyBQlPk16IuGobjRevbBddV4B4loHu9rnyZ9Jo-zaXL4PLLKyLRu1mLzB4awAzOrKsf/exec",
+            "34": "https://script.google.com/macros/s/AKfycbwv19xLdUtpeXDDTb3VTeFsPV3mRWX4ESzC_0GzeuK1R1uQY2qpeJ2t-tzGb6qsX_GL/exec",
+            "OD-0000": "https://script.google.com/macros/s/ZZZ/exec" // Exemple supplémentaire
+        };
+
+        function redirigerArtisan(inputId, errorId) {
+            const inputElement = document.getElementById(inputId);
+            const errorElement = document.getElementById(errorId);
+            
+            // Nettoyage de la saisie (supprime les espaces et force les majuscules)
+            const codeSaisi = inputElement.value.trim().toUpperCase();
+
+            if (apps[codeSaisi]) {
+                // Cache l'erreur si elle était affichée
+                errorElement.classList.add('hidden');
+                // Redirection vers la WebApp cible dans un nouvel onglet
+                window.open(apps[codeSaisi], '_blank');
+            } else {
+                // Affiche le message d'erreur correspondant
+                errorElement.classList.remove('hidden');
+            }
+        }
+
+        // Permet de valider en appuyant sur la touche "Entrée"
+        document.getElementById('mainCodeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                redirigerArtisan('mainCodeInput', 'mainError');
+            }
+        });
+        document.getElementById('headerCodeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                redirigerArtisan('headerCodeInput', 'headerError');
+            }
+        });
+    </script>
 
 </body>
 </html>
