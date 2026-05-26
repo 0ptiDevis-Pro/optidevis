@@ -5,114 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politique de confidentialité — OptiDevis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        fond: '#e9eef5',
+                        carte: '#ffffff',
+                        header: '#0f172a',
+                        bleu: '#2563eb',
+                        bordure: '#d7e0ea',
+                        texteSec: '#64748b'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-[#e9eef5] font-['Inter'] text-[#0f172a] antialiased min-h-screen flex flex-col">
-    <header class="bg-[#0f172a] text-white p-6 shadow-md">
-        <div class="max-w-4xl mx-auto flex items-center justify-between">
-            <span class="text-xl font-bold">Opti<span class="text-[#2563eb]">Devis</span></span>
-            <a href="./index.html" class="text-xs bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg transition-colors border border-slate-700">Retour au site</a>
+<body class="bg-fond font-sans text-header antialiased min-h-screen flex flex-col">
+
+    <header class="bg-header text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight">Opti<span class="text-bleu">Devis</span></span>
+            <a href="./index.html" class="text-xs bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg transition-colors border border-slate-700 font-medium">
+                Retour au site
+            </a>
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-12">
-        <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-[#d7e0ea] space-y-6">
-            <h1 class="text-3xl font-bold border-b pb-4 text-[#0f172a]">Politique de confidentialité</h1>
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8 sm:py-12">
+        <div class="bg-carte p-6 sm:p-10 rounded-2xl shadow-sm border border-bordure space-y-8">
+            
+            <div class="border-b border-bordure pb-4">
+                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-header">Politique de confidentialité</h1>
+                <p class="text-xs text-texteSec mt-2">Dernière mise à jour : 2026</p>
+            </div>
 
             <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">1. Objet</h2>
-                <p class="text-sm text-[#64748b] leading-relaxed">
+                <h2 class="text-lg font-semibold text-bleu">1. Objet</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
                     La présente politique de confidentialité a pour objectif d’informer les utilisateurs de la solution OptiDevis sur la manière dont leurs données personnelles peuvent être collectées, utilisées et protégées.
                 </p>
             </section>
 
             <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">2. Responsable du traitement</h2>
-                <p class="text-sm text-[#64748b]">Le responsable du traitement des données liées au fonctionnement du site vitrine et des accès à la solution est :</p>
-                <p class="text-sm text-[#64748b] font-medium">OptiDevis — Email : optidevis23@gmail.com</p>
+                <h2 class="text-lg font-semibold text-bleu">2. Responsable du traitement</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Le responsable du traitement des données liées au fonctionnement du site vitrine et des accès à la solution est :
+                </p>
+                <div class="bg-fond/50 p-4 rounded-xl border border-bordure text-sm text-header space-y-1">
+                    <p class="font-semibold">OptiDevis</p>
+                    <p>Email : <a href="mailto:optidevis23@gmail.com" class="text-bleu hover:underline">optidevis23@gmail.com</a></p>
+                </div>
             </section>
 
             <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">3. Données collectées</h2>
-                <p class="text-sm text-[#64748b]">OptiDevis peut collecter uniquement les données strictement nécessaires au fonctionnement du service, notamment :</p>
-                <ul class="list-disc pl-5 text-sm text-[#64748b] space-y-1">
-                    <li>Adresse email professionnelle ;</li>
-                    <li>Code entreprise ;</li>
-                    <li>Logs techniques de connexion ;</li>
-                    <li>Données nécessaires à la sécurisation des accès.</li>
+                <h2 class="text-lg font-semibold text-bleu">3. Données collectées</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    OptiDevis peut collecter uniquement les données strictly nécessaires au fonctionnement du service, notamment :
+                </p>
+                <ul class="list-disc pl-5 text-sm text-texteSec space-y-1">
+                    <li>adresse email professionnelle ;</li>
+                    <li>code entreprise ;</li>
+                    <li>logs techniques de connexion ;</li>
+                    <li>données nécessaires à la sécurisation des accès.</li>
                 </ul>
-                <p class="text-sm text-[#64748b] italic">OptiDevis ne collecte pas volontairement les données clients finales des artisans utilisateurs.</p>
-            </section>
-
-            <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">4. Finalités du traitement</h2>
-                <ul class="list-disc pl-5 text-sm text-[#64748b] space-y-1">
-                    <li>Permettre l’accès sécurisé à la solution ;</li>
-                    <li>Authentifier les utilisateurs ;</li>
-                    <li>Assurer le bon fonctionnement du service ;</li>
-                    <li>Prévenir les accès frauduleux ;</li>
-                    <li>Assurer le support technique.</li>
-                </ul>
-            </section>
-
-            <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">5. Base légale</h2>
-                <p class="text-sm text-[#64748b]">Les traitements effectués reposent sur l’exécution du service demandé par l’utilisateur et sur l’intérêt légitime lié à la sécurisation de la plateforme.</p>
-            </section>
-
-            <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">6. Hébergement des données</h2>
-                <p class="text-sm text-[#64748b] leading-relaxed">
-                    Les données et documents générés par les utilisateurs professionnels sont stockés directement dans leur propre environnement Google Workspace ou Google personnel. OptiDevis n’assure pas un hébergement centralisé des devis ou données clients des artisans.
+                <p class="text-sm text-texteSec italic bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-800">
+                    OptiDevis ne collecte pas volontairement les données clients finales des artisans utilisateurs.
                 </p>
             </section>
 
             <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">7. Conservation des données</h2>
-                <p class="text-sm text-[#64748b]">Les données techniques liées aux accès utilisateurs peuvent être conservées pendant une durée maximale de trois (3) ans à compter de la dernière activité.</p>
-            </section>
-            <h2>8. Destinataires des données</h2>
-
-<p>
-Les données peuvent être accessibles uniquement :
-</p>
-
-<ul>
-<li>aux services techniques nécessaires au fonctionnement ;</li>
-<li>aux prestataires d’hébergement et d’infrastructure ;</li>
-<li>aux autorités légalement habilitées lorsque la loi l’impose.</li>
-</ul>
-
-<h2>9. Sécurité</h2>
-
-<p>
-OptiDevis met en œuvre des mesures raisonnables destinées à limiter les risques d’accès non autorisé, d’altération ou de divulgation des données.
-</p>
-
-<p>
-Toutefois, aucun système informatique ne peut garantir une sécurité absolue.
-</p>
-
-<h2>12. Modification</h2>
-
-<p>
-OptiDevis se réserve le droit de modifier la présente politique de confidentialité afin d’assurer sa conformité avec la législation applicable ou l’évolution du service.
-</p>
-
-            <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">10. Droits des utilisateurs</h2>
-                <p class="text-sm text-[#64748b]">Conformément à la réglementation (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement et de limitation. Les demandes s'effectuent par mail : <strong>optidevis23@gmail.com</strong>.</p>
+                <h2 class="text-lg font-semibold text-bleu">4. Finalités du traitement</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Les données collectées sont utilisées afin de :
+                </p>
+                <ul class="list-disc pl-5 text-sm text-texteSec space-y-1">
+                    <li>permettre l’accès sécurisé à la solution ;</li>
+                    <li>authentifier les utilisateurs ;</li>
+                    <li>assurer le bon fonctionnement du service ;</li>
+                    <li>prévenir les accès frauduleux ;</li>
+                    <li>assurer le support technique.</li>
+                </ul>
             </section>
 
             <section class="space-y-2">
-                <h2 class="text-xl font-semibold text-[#2563eb]">11. Cookies</h2>
-                <p class="text-sm text-[#64748b]">Le site OptiDevis n’utilise pas de cookies publicitaires ou de suivi comportemental. Seuls des cookies techniques strictement nécessaires au fonctionnement du service peuvent être utilisés.</p>
+                <h2 class="text-lg font-semibold text-bleu">5. Base légale</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Les traitements effectués reposent :
+                </p>
+                <ul class="list-disc pl-5 text-sm text-texteSec space-y-1">
+                    <li>sur l’exécution du service demandé par l’utilisateur ;</li>
+                    <li>sur l’intérêt légitime lié à la sécurisation de la plateforme.</li>
+                </ul>
             </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">6. Hébergement des données</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Les données et documents générés par les utilisateurs professionnels sont stockés directement dans leur propre environnement Google Workspace ou Google personnel.
+                </p>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    OptiDevis n’assure pas un hébergement centralisé des devis ou données clients des artisans.
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">7. Conservation des données</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Les données techniques liées aux accès utilisateurs peuvent être conservées pendant une durée maximale de trois (3) ans à compter de la dernière activité.
+                </p>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Les utilisateurs professionnels demeurent seuls responsables de la conservation ou suppression des données présentes dans leur propre environnement Google.
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">8. Destinataires des données</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Les données peuvent être accessibles uniquement :
+                </p>
+                <ul class="list-disc pl-5 text-sm text-texteSec space-y-1">
+                    <li>aux services techniques nécessaires au fonctionnement ;</li>
+                    <li>aux prestataires d’hébergement et d’infrastructure ;</li>
+                    <li>aux autorités légalement habilitées lorsque la loi l’impose.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">9. Sécurité</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    OptiDevis met en œuvre des mesures raisonnables destinées à limiter les risques d’accès non autorisé, d’altération ou de divulgation des données.
+                </p>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Toutefois, aucun système informatique ne peut garantir une sécurité absolue.
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">10. Droits des utilisateurs</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Conformément à la réglementation applicable, les utilisateurs disposent notamment :
+                </p>
+                <ul class="list-disc pl-5 text-sm text-texteSec space-y-1">
+                    <li>d’un droit d’accès ;</li>
+                    <li>d’un droit de rectification ;</li>
+                    <li>d’un droit d’effacement ;</li>
+                    <li>d’un droit d’opposition ;</li>
+                    <li>d’un droit à la limitation du traitement.</li>
+                </ul>
+                <p class="text-sm text-texteSec leading-relaxed mt-2">
+                    Les demandes peuvent être adressées à : <a href="mailto:optidevis23@gmail.com" class="text-bleu font-medium hover:underline">optidevis23@gmail.com</a>
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">11. Cookies</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Le site OptiDevis n’utilises pas de cookies publicitaires ou de suivi comportemental.
+                </p>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    Seuls des cookies techniques strictement nécessaires au fonctionnement du service peuvent être utilisés.
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-semibold text-bleu">12. Modification</h2>
+                <p class="text-sm text-texteSec leading-relaxed">
+                    OptiDevis se réserve le droit de modifier la présente politique de confidentialité à tout moment afin de garantir sa conformité avec la législation applicable.
+                </p>
+            </section>
+
         </div>
     </main>
 
-    <footer class="bg-white border-t border-[#d7e0ea] py-4 text-center text-xs text-[#64748b]">
-        &copy; 2026 OptiDevis. Tous droits réservés.
+    <footer class="bg-white border-t border-bordure py-6 mt-auto">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs text-texteSec gap-2">
+            <div>&copy; 2026 OptiDevis. Tous droits réservés.</div>
+            <div class="flex space-x-4">
+                <a href="./mentions-legales.html" class="hover:text-header transition-colors">Mentions légales</a>
+                <a href="./cgu.html" class="hover:text-header transition-colors">CGU</a>
+                <a href="mailto:optidevis23@gmail.com" class="hover:text-header transition-colors">Contact</a>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
