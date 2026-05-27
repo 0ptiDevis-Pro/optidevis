@@ -272,4 +272,48 @@
          * Bascule l'état visuel et d'accessibilité (Loader / Disabled)
          */
         function basculerEtatElements(estEnCours) {
-            const loader = document.
+            const loader = document.getElementById('globalLoader');
+            const btns = [document.getElementById('mainSubmitBtn'), document.getElementById('headerSubmitBtn')];
+            const inputs = [document.getElementById('mainCodeInput'), document.getElementById('headerCodeInput')];
+
+            if (estEnCours) {
+                loader.classList.remove('opacity-0', 'pointer-events-none');
+                loader.setAttribute('aria-hidden', 'false');
+                btns.forEach(b => { if(b) { b.disabled = true; b.classList.add('opacity-50', 'cursor-not-allowed'); } });
+                inputs.forEach(i => { if(i) i.disabled = true; });
+            } else {
+                loader.classList.add('opacity-0', 'pointer-events-none');
+                loader.setAttribute('aria-hidden', 'true');
+                btns.forEach(b => { if(b) { b.disabled = false; b.classList.remove('opacity-50', 'cursor-not-allowed'); } });
+                inputs.forEach(i => { if(i) i.disabled = false; });
+            }
+        }
+
+        /**
+         * Utilitaire Fetch avec gestion de délai d'attente
+         */
+        async function fetchAvecTimeout(resource, options = {}, timeout = 8000) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), timeout);
+            try {
+                const response = await fetch(resource, { ...options, signal: controller.signal });
+                clearTimeout(id);
+                return response;
+            } catch (error) {
+                clearTimeout(id);
+                throw error;
+            }
+        }
+
+        // Écouteurs d'événements clavier (Touche Entrée)
+        document.querySelectorAll('input[type="text"]').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const idTarget = this.id === 'mainCodeInput' ? ['mainCodeInput', 'mainError'] : ['headerCodeInput', 'headerError'];
+                    traiterAuthentification(idTarget[0], idTarget[1]);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
